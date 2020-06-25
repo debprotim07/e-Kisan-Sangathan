@@ -1,0 +1,71 @@
+<% include partials/header %>
+<ul style="margin-left:20px;" class="pager">
+    <li class="previous"><a href="/staff"><span aria-hidden="true">&larr;</span> GO BACK ! </a></li>
+  </ul>
+<div class="container">
+    <div class="row">
+        <h1 style="text-align: center">NEW ENTRY</h1>
+        <div style="width: 30%; margin: 25px auto;">
+            <form action="/staff" method="POST">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="name" placeholder="name">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="number" name="id" placeholder="farmer id">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="groupid" placeholder="farmer groupid">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="groupname" placeholder="farmer group name">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="projectid" placeholder="farmer crop id">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="projectname" placeholder="farmer crop name">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="password" placeholder="password">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="number" min="0" value="0" step=".01" max="1.0" name="contribution" placeholder="contribution">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="number" name="projectyear" placeholder="crop year">
+                </div>
+                <div class="form-group">
+                        <select class="form-control" style="width: 100%;" name="division" >
+                        <option  value="">Select division</option>
+                        <option  value="Irrigation">Irrigation</option>
+                        <option  value="Plantation">Plantation</option>
+                        <option  value="Machinery operations">Machinery operations</option>
+                        <option  value="Technician">Technician</option>
+                        <option  value="Care taker">Care taker</option>
+                        <option  value="manager">manager</option>
+                        </select>
+                </div>
+                <div class="form-group">
+                    <select class="form-control" style="width: 100%;" name="designation">
+                        <option  value="">Select designation</option>
+                        <option  value="head">head</option>
+                        <option  value="class-1 worker">class-1 worker</option>
+                        <option  value="class-2 worker">class-2 worker</option>
+                        <option  value="helper">helper</option>
+                        <option  value="contract">contract</option>
+                        </select>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Submit!</button>
+                </div>
+                
+                
+                
+                
+            </form>
+            <a href="/staff">Go Back</a>
+        </div>
+    </div>
+</div>
+<% include partials/footer %>
+

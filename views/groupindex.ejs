@@ -1,0 +1,50 @@
+<% include partials/header %>
+
+<ul style="text-align:center; margin:10px;" class="nav nav-pills">
+  <li role="presentation" ><a href="/staff">VIEW ALL FARMERS </a></li>
+  <li role="presentation" class="active"><a href="/groupindex">FARMER GROUP VIEW</a></li>
+  <li role="presentation"><a href="/projectindex">FARMER CROP VIEW</a></li>
+  <li role="presentation"><a href="/organisationindex">FARMER ORGANISATION VIEW</a></li>
+</ul>
+
+
+<div class="container">
+     <header class="jumbotron">
+         <div class="container">
+             <h1 style="text-align:center;">GROUP VIEW</h1>
+             <p style="text-align:center;">All farmer groups are displayed below : </p>
+             
+             <form action="/group/sorted"?_method=PUT" method="POST">
+                <p style="text-align:center;" class="form-group">
+                    <input style="margin:0 auto; width:200px;"class="form-control" type="text" name="egroupname" placeholder=" Search by group name " >
+    
+                    <button style="margin-top:10px; width:200px;"class="btn btn-success btn-large">Search!</button>
+                </p>
+            </form>
+            <p style="text-align:center;">
+                       <a style="width:200px;" href="/groupindex" class="btn btn-info">Display All Farmer Groups</a>
+            </p>
+         </div>
+     </header>
+     
+     <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+       <% groupview.forEach(function(groupview){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail zoom">
+                   <p>
+                       <h4>FARMER GROUP ID : <%= groupview.groupid %></h4>
+                       <h4>FARMER GROUP NAME : <%= groupview.groupname %></h4>
+                   </p>
+                   <br>
+                   <p>
+                       <a href="/groupindex/<%= groupview.groupid %>" class="btn btn-primary">More Info</a>
+                   </p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+
+
+<% include partials/footer %>

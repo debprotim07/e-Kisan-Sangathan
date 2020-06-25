@@ -1,0 +1,26 @@
+#myBtn{
+    color:black;
+    background-color:white;
+    margin-left:20px;
+    margin-right:20px;
+}
+#myBtn:hover {
+    color:white;
+  background-color: #555; /* Add a dark-grey background on hover */
+}
+
+
+.zoom:hover {
+  transform: scale(1.1); 
+  background-color:#f2f7ff;
+  transition: 0.3s;
+  
+}
+
+.zoom2:hover {
+  transform: scale(1.05); 
+  background-color:#f2f7ff;
+  border-radius:5px 5px 5px 5px;
+  transition: 0.3s;
+  
+}

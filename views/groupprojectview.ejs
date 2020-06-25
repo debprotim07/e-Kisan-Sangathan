@@ -1,0 +1,63 @@
+<% include partials/header %>
+<nav>
+  <ul style="margin-left:20px;" class="pager">
+    <li class="previous"><a href="/groupindex"><span aria-hidden="true">&larr;</span> GROUP VIEW ! </a></li>
+  </ul>
+</nav>
+<br>
+<h1 style="text-align:center;">Farmer Group Id   : <%= results[0].groupid %></h1>
+<h1 style="text-align:center; ">Farmer Group Name : <%= results[0].groupname %></h1>
+<p style="text-align:center;"> ALL CROPS UNDER THIS FARMER GROUP ARE DISPLAYED BELOW : </p>
+<br>
+
+
+
+<div class="container">
+    
+<div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <% results.forEach(function(results){ %>
+        
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail zoom">
+                   <p>
+                       <h4>FARMER CROP ID : <%= results.projectid %></h4>
+                       <h4>FARMER CROP NAME : <%= results.projectname %></h4>
+                   </p>
+                   <br>
+                   <p>
+                       <a href="/groupindex/<%=results.groupid%>/<%= results.projectid %>/staff" class="btn btn-primary">Display Farmers</a>
+                   </p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<% include partials/footer %>

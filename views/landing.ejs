@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SOFTWARE ENGINEERING PROJECT</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/stylesheets/landing.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
+    </head>
+    <body>
+    
+   
+    
+    <div id="landing-header">
+        <h1 style="color: white; text-shadow: 2px 2px 4px #000000;"><b>Welcome to Indian Farmers Association!</b></h1>
+ 		<br>
+ 		 <form action="/login" method="POST">
+                <div style="width:200px; margin:0 auto; " class="form-group">
+                    <input class="form-control" type="number" min='0' max='99999' name="farmerid" placeholder="farmer id">
+                </div>
+                <br>
+                <div style="width:200px; margin:0 auto; " class="form-group">
+                    <input class="form-control" type="password" name="farmerpassword" placeholder="farmer password">
+                </div>
+                <br>
+                <div class="form-group">
+                    <!--<button class="btn btn-lg btn-primary btn-block">LOGIN!</button>-->
+                    <input style="width:200px;" type="submit" class="btn btn-lg btn-success" value="Login">
+                </div>
+            </form>
+            <!--<a style="width:200px; margin:0 auto;" href="/staff" class="btn btn-lg btn-info">GUEST</a>-->
+
+    </div>
+    
+    <ul class="slideshow">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
+<% include partials/footer %>

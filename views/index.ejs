@@ -1,0 +1,48 @@
+<% include partials/header %>
+
+<ul style="text-align:center; margin:10px;" class="nav nav-pills ">
+  <li role="presentation" class="active"><a href="/staff">VIEW ALL FARMERS </a></li>
+  <li role="presentation"><a href="/groupindex"> FARMER GROUP VIEW</a></li>
+  <li role="presentation"><a href="/projectindex">FARMER CROP VIEW</a></li>
+  <li role="presentation"><a href="/organisationindex">FARMER ORGANISATION VIEW</a></li>
+</ul>
+ <div class="container">
+     <header class="jumbotron">
+         <div class="container">
+             <h1 style="text-align:center;">VIEW ALL FARMERS </h1>
+             <p style="text-align:center;">all farmers are displayed below : </p>
+             <p style="text-align:center; margin:10px;">
+                <a style="width:150px" class="btn btn-primary btn-large " href="/staff/new">New Entry</a>
+                <a style="width:150px" class="btn btn-primary btn-large " href="/staff/delete">Delete Entry</a>
+             </p>
+
+              <form action="/staff/sorted"?_method=PUT" method="POST">
+                <p style="text-align:center;" class="form-group">
+                    <input style="margin:0 auto; width:200px;"class="form-control" type="text" name="efarmername" placeholder=" Search by farmer name " >
+    
+                    <button style="margin-top:10px; width:100px;"class="btn btn-success btn-large">Search!</button>
+                </p>
+            </form>
+            
+            
+         </div>
+     </header>
+     
+     <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <% staff.forEach(function(staff){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail zoom">
+                   <p>
+                       <h4>FARMER NAME : <%= staff.name %></h4>
+                       <h4>FARMER ID : <%= staff.id %></h4>
+                       <h4>FARMER GROUP ID : <%= staff.groupid %></h4>
+                       <h4>CROP ID : <%= staff.projectid %></h4>
+                       
+                   </p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<% include partials/footer %>

@@ -1,0 +1,52 @@
+<% include partials/header %>
+<ul style="margin-left:20px;" class="pager">
+    <li class="previous"><a href="/groupindex"><span aria-hidden="true">&larr;</span> GROUP VIEW! ! </a></li>
+  </ul>
+  <% if (typeof(staff[0]) != "undefined"){ %>
+<div style="background-color:#42659b;color:white;padding-bottom:10px;border-radius:5px 5px 5px 5px" class="container">
+  
+<h1 style="text-align:center;"><strong>Farmer Group Id   :&ensp;<%= staff[0].groupid %></strong></h1>
+<h1 style="text-align:center; "><strong>Farmer Group Name :&ensp;<%= staff[0].groupname %> </strong></h1>
+</div>
+<h3 style="text-align:center; "><b>Farmer Crop Id :&ensp;<%= staff[0].projectid %></b></h3>
+<h3 style="text-align:center; "><b>Farmer Crop Name :&ensp;<%= staff[0].projectname %></b></h3>
+<div class="container">
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">FARMER DETAILS</div>
+  <div class="panel-body">
+    <p>This is a list of all farmer details working on crop "<b><%= staff[0].projectname %></b>" belonging to farmer group "<b><%= staff[0].groupname %></b>" along with their contributions to the crop "<b><%= staff[0].projectname %></b>" </p>
+  </div>
+
+  <!-- Table -->
+  <table style="text-align:center;"class="table">
+    <tr style="background-color:#42659b;color:white;">
+        <td ><b>Farmer Id</b></th>
+        <td ><b>Farmer Name</b></th>
+        <td ><b>Farmer Division</b></th>
+        <td ><b>Farmer Position</b></th>
+        <td ><b>Year of the crop</b></th>
+        <td ><b>Farmer Contribution</b></th>
+    </tr>
+    <% staff.forEach(function(staff){ %>
+            
+            <tr class="zoom2">
+                <td><%= staff.id %></td>
+                <td><%= staff.name %></td>
+                <td><%= staff.division %></td>
+                <td><%= staff.designation %></td>
+                <td><%= staff.year %></td>
+                <td><%= staff.contribution %></td>
+            </tr>
+        <% }); %>
+  </table>
+</div>
+</div>
+<% }else{ %>
+<h1 style="text-align:center;">NO STAFF WORKING UNDER THIS PROJECT</h1>
+<% } %>
+
+
+
+
+<% include partials/footer %>
